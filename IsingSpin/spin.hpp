@@ -1,5 +1,5 @@
-#ifndef IsingSystem_hpp
-#define IsingSystem_hpp
+#ifndef IsingSpin_hpp
+#define IsingSpin_hpp
 
 #include<iostream>
 #include<cassert>

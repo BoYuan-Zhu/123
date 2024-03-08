@@ -4,14 +4,18 @@
 using namespace std;
 int main(int argc, const char * argv[]) 
 {
-    IsingSpin spin;
-    cout << "Spin state (initiate): " << spin._sz() << endl;
+    IsingSpin sp;
+    cout << "Spin state (initiate): " << sp._sz() << endl;
+    
 
-    spin.flip();
-    cout << "Spin state (initiate): " << spin._sz() << endl;
+    sp.set_down();
+    cout << "Spin state (initiate): " << sp._sz() << endl;
 
-    spin.flip();
-    cout << "Spin state (initiate): " << spin._sz() << endl;
+    sp.flip();
+    cout << "Spin state (initiate): " << sp._sz() << endl;
+
+    sp.flip();
+    cout << "Spin state (initiate): " << sp._sz() << endl;
 
     const int n_spin = 10;
     vector<IsingSpin> spin_array(n_spin);
