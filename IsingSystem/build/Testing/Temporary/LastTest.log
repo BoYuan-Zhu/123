@@ -1,0 +1,22 @@
+Start testing: Mar 11 19:47 CST
+----------------------------------------------------------
+1/1 Testing: UnitTest_IsingSystem
+1/1 Test: UnitTest_IsingSystem
+Command: "/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem/build/UnitTests_catch2"
+Directory: /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem/build
+"UnitTest_IsingSystem" start time: Mar 11 19:47 CST
+Output:
+----------------------------------------------------------
+Randomness seeded to: 2949039596
+===============================================================================
+All tests passed (15 assertions in 3 test cases)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnitTest_IsingSystem" end time: Mar 11 19:47 CST
+"UnitTest_IsingSystem" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 11 19:47 CST

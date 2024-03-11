@@ -1,0 +1,22 @@
+Start testing: Mar 11 17:30 CST
+----------------------------------------------------------
+1/1 Testing: UnitTests_IsingSpin
+1/1 Test: UnitTests_IsingSpin
+Command: "/home/peggy_piggy_zhu/SJTU_CP2024/IsingSpin/build/UnitTests_catch2"
+Directory: /home/peggy_piggy_zhu/SJTU_CP2024/IsingSpin/build
+"UnitTests_IsingSpin" start time: Mar 11 17:30 CST
+Output:
+----------------------------------------------------------
+Randomness seeded to: 2257947505
+===============================================================================
+All tests passed (7 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"UnitTests_IsingSpin" end time: Mar 11 17:30 CST
+"UnitTests_IsingSpin" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 11 17:30 CST

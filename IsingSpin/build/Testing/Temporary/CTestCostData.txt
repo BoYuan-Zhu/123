@@ -1,0 +1,3 @@
+UnitTests 0 0
+UnitTests_IsingSpin 1 0.00208324
+---
