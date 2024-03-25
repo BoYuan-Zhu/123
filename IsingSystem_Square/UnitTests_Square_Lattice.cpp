@@ -19,10 +19,13 @@ TEST_CASE("IsingSpinOnLattice","[single spin]")
         REQUIRE(spin._NN(0) == -1);
     };
 };
+
+
 TEST_CASE("IsingSystem","[examples of 10 spins]")
 {
     const int n_spin = 10;
-    IsingSystem spin(n_spin);
+    std::vector<double> beta = {0.1,1.0};
+    IsingSystem spin(n_spin,beta);
     
     SECTION("basics")
     {
@@ -46,30 +49,33 @@ TEST_CASE("IsingSystem","[examples of 10 spins]")
       spin.flip_spin(0);
       spin.flip_spin(0);
       REQUIRE(spin._sz(0)==1);
+  
+      REQUIRE(spin._beta()[0] == 0.1); 
+      REQUIRE(spin._beta()[1] == 1.0); 
     };
-
+      
     SECTION("spin state code #7")
     {
         spin.set_state_by_code(7);
         REQUIRE(spin.eval_mz() == -4);
-        REQUIRE(spin.eval_energy() == -6);
+        REQUIRE(spin.eval_energy_1D() == -6);
     };
 
     SECTION("spin state code #77")
     {
         spin.set_state_by_code(77);
         REQUIRE(spin.eval_mz() == -2);
-        REQUIRE(spin.eval_energy() == 2);
+        REQUIRE(spin.eval_energy_1D() == 2);
     };
     
     SECTION("spin state code #777")
     {
         spin.set_state_by_code(777);
         REQUIRE(spin.eval_mz() == -2);
-        REQUIRE(spin.eval_energy() == -2);
+        REQUIRE(spin.eval_energy_1D() == -2);
     };
     
-    IsingSystem model(n_spin);
+    IsingSystem model(n_spin,beta);
     SECTION("spin position initialization")
     {
         constexpr int dim = 2;
@@ -86,12 +92,14 @@ TEST_CASE("IsingSystem","[examples of 10 spins]")
 TEST_CASE("IsingSystem_Square","[examples of 6 x 6 spins]")
 {
     const std::vector<int> system_size = {6,6};
-    IsingSystem_Square model(system_size);
+    const std::vector<double> beta = {1.0};
+    IsingSystem_Square model(system_size,beta);
 
     SECTION("basics")
     {
         REQUIRE(model._n_spins() == 36);
         REQUIRE_THAT(model._J(),Catch::Matchers::WithinULP(-1.0,4));
+        REQUIRE(model.ground_state() == -4*6*6/2);
     };
       SECTION("site index")
     {
@@ -146,3 +154,44 @@ TEST_CASE("IsingSystem_Square","[examples of 6 x 6 spins]")
     };
 };
 
+
+
+
+// TEST_CASE("IsingSystem_Square","[tests for exact counting]")
+// {
+//     const vector<int> system_size = { 6, 6 };
+//     std::vector<double> beta = { 0.1, 1.0, 2.0 };
+//     IsingSystem_Square model(system_size, beta);
+//     std::vector<bool>
+//           pi_state({1,1,0,1,1,1,0,0,1,1,1,0,1,1,1,1,0,1,0,0,0,0,0,0,1,1,0,1,0,1,1,1,0,0,0,0});
+//     constexpr double energy = -4.0;
+//     constexpr int magz = 2;
+//     constexpr double w0= 1.491824697641270;//exp(-1 *0.1*(-4.0))
+//     constexpr double w1 = 54.59815003314424;// exp(-1*1.0 *(-4.0))
+//     constexpr double w2=2980.957987041728;// exp(-1*2.0 *(-4.0))
+//     constexpr double w[3] = {w0,w1,w2};
+
+//     SECTION("'pi' state :M, E, and Boltzmann weight") 
+//     {
+//         model.set_state(pi_state);
+//         REQUIRE(model.eval_mz() == magz);
+//         REQUIRE_THAT(model.eval_energy(), Catch::Matchers::WithinULP(energy, 4));
+//         for(std::size_t beta_idx=0; beta_idx<beta.size(); beta_idx++)
+//         {
+//             REQUIRE_THAT(model.weight_unnormalized(beta[beta_idx]), Catch::Matchers::WithinULP(w[beta_idx], 4));
+//         };
+//     };
+
+//     SECTION("'pi' state :single term in the whole sum")
+//     {
+//         model.exactly_evaluate(pi_state);
+//         for(std::size_t beta_idx=0;beta_idx<beta.size(); beta_idx++)
+//         {
+//             REQUIRE_THAT(model._exact_energy_Z(beta_idx), Catch::Matchers::WithinULP(w[beta_idx], 4));
+//             REQUIRE_THAT(model._exact_energy_q(beta_idx), Catch::Matchers::WithinULP(energy * w[beta_idx], 4));
+//             REQUIRE_THAT(model._exact_energy_q_sq(beta_idx), Catch::Matchers::WithinULP(energy * energy * w[beta_idx],4));
+//             REQUIRE_THAT(model._exact_magz_Z(beta_idx), Catch::Matchers::WithinULP(w[beta_idx], 4));
+//             REQUIRE_THAT(model._exact_magz_q_sq(beta_idx), Catch::Matchers::WithinULP(magz*magz*w[beta_idx],4));
+//         }
+//     };
+// };
