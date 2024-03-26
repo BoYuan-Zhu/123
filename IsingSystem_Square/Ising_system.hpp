@@ -60,6 +60,8 @@ public:
         {
            state[i-1] = 0;
         }
+       
+
     } 
     return state;
    };

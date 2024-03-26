@@ -1,5 +1,5 @@
 UnitTests_IsingSystem_Square 1 0.00260642
 UnitTests_IsingSpinOnLattice 2 0.0010118
 UnitTests_IsingSystem 1 0.00211737
-UnitTests_Square_Lattice 21 0.000128028
+UnitTests_Square_Lattice 22 0.000133652
 ---

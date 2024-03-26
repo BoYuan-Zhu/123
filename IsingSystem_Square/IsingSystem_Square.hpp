@@ -17,6 +17,7 @@ private:
    std::vector<double> M_sq;
    std::vector<double> Z;
    std::vector<double> C;
+   std::vector<double> state_energy;
    const double ground_state_energy;
    void setup_NN()
    {
@@ -41,6 +42,8 @@ public:
        M_sq.assign(beta.size(),0);
        Z.assign(beta.size(),0);
        C.assign(beta.size(),0);
+       state_energy.resize(maxrep_state+1);
+
        };
        
        
@@ -113,11 +116,15 @@ public:
     double energy = 0;
     for (int i = 0;i<_n_spins();i++) 
    {
-      for (int j = 0; j<4; j++ )
+    for (int j = 0; j<4; j++ )
           {energy += spin[i]._sz() * spin[spin[i]._NN(j)]._sz();};
+      
+
    }
-   
+    
     energy *= J/2;
+    // std::cout << energy;
+    
     return energy;
 
    };
@@ -127,60 +134,68 @@ public:
         return ground_state_energy;
     };
 
-    double weight_unnormalized(const std::size_t beta_idx)const
+    double weight_unnormalized(const std::size_t beta_idx,const long long& rep_state)const
     {
-        return exp(-beta[beta_idx]*(eval_energy()-ground_state()));
+        // std::cout << exp(-beta[beta_idx]*(state_energy[rep_state]-ground_state()));
+        return exp(-beta[beta_idx]*(state_energy[rep_state]-ground_state()));
     };
 
-    double _exact_energy_Z(const std::size_t beta_idx)const
+    double _exact_energy_Z(const std::size_t beta_idx,const long long& rep_state)const
+
     {
-        return weight_unnormalized(beta_idx);
+        // std::cout<< weight_unnormalized(beta_idx,rep_state);
+        return weight_unnormalized(beta_idx,rep_state);
     };
 
-    double _exact_energy_q(const std::size_t beta_idx)const
+    double _exact_energy_q(const std::size_t beta_idx,const long long& rep_state)const
     {
-        return _exact_energy_Z(beta_idx)*eval_energy();
+        // std::cout << _exact_energy_Z(beta_idx,rep_state)*state_energy[rep_state];
+        return _exact_energy_Z(beta_idx,rep_state)*state_energy[rep_state];
     }; 
     
-    double _exact_energy_q_sq(const std::size_t beta_idx)const
+    double _exact_energy_q_sq(const std::size_t beta_idx,const long long& rep_state)const
     {
-        return _exact_energy_q(beta_idx)*eval_energy();
+        return _exact_energy_q(beta_idx,rep_state)*state_energy[rep_state];
     }; 
    
-    double _exact_magz_Z(const std::size_t beta_idx)const
+    double _exact_magz_Z(const std::size_t beta_idx,const long long& rep_state)const
     {
-        return weight_unnormalized(beta_idx);
+        return weight_unnormalized(beta_idx,rep_state);
     }; 
 
-    double _exact_magz_q_sq(const std::size_t beta_idx)const
+    double _exact_magz_q_sq(const std::size_t beta_idx,const long long& rep_state)const
     {
-        return _exact_magz_Z(beta_idx)*eval_mz()*eval_mz();
+        return _exact_magz_Z(beta_idx,rep_state)*eval_mz()*eval_mz();
     }; 
     
-    void exactly_evaluate_given()
+    void exactly_evaluate_given(const long long& rep_state)
     {
         for(int i = 0; i<beta.size(); i++)
         {
-            internal_E[i] += _exact_energy_q(i);
-            internal_E_sq[i] += _exact_energy_q_sq(i);
-            Z[i] += weight_unnormalized(i);
-            M_sq[i] += _exact_magz_q_sq(i);
+            internal_E[i] += _exact_energy_q(i,rep_state);
+            internal_E_sq[i] += _exact_energy_q_sq(i,rep_state);
+            Z[i] += weight_unnormalized(i,rep_state);
+            
+            M_sq[i] += _exact_magz_q_sq(i,rep_state);
+            // std::cout << M_sq[i]<< std::endl;
+      
         }
         
     };
 
     // For state in vector form
-    void exactly_evaluate(const std::vector<bool>& state)
+    void exactly_evaluate(const std::vector<bool>& state,const long long& rep_state)
     {
          set_state(state),
-         exactly_evaluate_given();
+         state_energy[rep_state] = eval_energy();
+         exactly_evaluate_given(rep_state);
     };
     
     // For state in integer form
     void exactly_evaluate(const long long& rep_state)
     {
         std::vector<bool> state = state_by_code(rep_state);
-        exactly_evaluate(state);
+        exactly_evaluate(state,rep_state);
     };
     
     //going through all the state
@@ -227,6 +242,8 @@ public:
     }
     std::cout << "." << std::endl;
     };
+
+  
 
 
 
