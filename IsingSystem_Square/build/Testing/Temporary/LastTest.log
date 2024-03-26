@@ -1,22 +1,22 @@
-Start testing: Mar 19 01:52 CST
+Start testing: Mar 25 11:14 CST
 ----------------------------------------------------------
 1/1 Testing: UnitTests_Square_Lattice
 1/1 Test: UnitTests_Square_Lattice
 Command: "/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/build/UnitTests_catch2"
 Directory: /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/build
-"UnitTests_Square_Lattice" start time: Mar 19 01:52 CST
+"UnitTests_Square_Lattice" start time: Mar 25 11:14 CST
 Output:
 ----------------------------------------------------------
-Randomness seeded to: 1911581346
-===============================================================================
-All tests passed (64 assertions in 3 test cases)
+Randomness seeded to: 4286879983
+8===============================================================================
+All tests passed (67 assertions in 3 test cases)
 
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"UnitTests_Square_Lattice" end time: Mar 19 01:52 CST
+"UnitTests_Square_Lattice" end time: Mar 25 11:14 CST
 "UnitTests_Square_Lattice" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Mar 19 01:52 CST
+End testing: Mar 25 11:14 CST
