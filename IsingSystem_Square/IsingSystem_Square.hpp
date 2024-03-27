@@ -217,6 +217,7 @@ public:
             internal_E_sq[i] *= 1/Z[i];
             M_sq[i] *= 1/Z[i];
             M_sq[i] *= 1.0/(n_spins*n_spins);
+            internal_E[i] /= n_spins;
 
         }
         for(int i = 0; i<beta.size(); i++)
@@ -233,20 +234,27 @@ public:
     {
         std::cout << value << " ";
     }
-    std::cout << "." << std::endl;
+    std::cout << "end." << std::endl;
         
         std::cout << "Magnetization (Squared): ";
     for (double value : M_sq) 
     {
         std::cout << value << " ";
     }
+    std::cout << "end." << std::endl;
+         std::cout << "Internal Energy: ";
+    for (double value : internal_E ) 
+    {
+        std::cout << value << " ";
+    }
     std::cout << "." << std::endl;
     };
+};
 
   
 
 
 
-};
+
 
 #endif
