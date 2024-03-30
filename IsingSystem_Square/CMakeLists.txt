@@ -1,3 +1,7 @@
+cmake_minimum_required(VERSION 3.29)
+project(ProjectName)
+
+
 # test framework repository
 include(FetchContent)
 FetchContent_Declare(catch2
