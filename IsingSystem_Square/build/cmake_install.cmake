@@ -43,9 +43,8 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
+  # Include the install script for the subdirectory.
   include("/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/build/_deps/catch2-build/cmake_install.cmake")
-
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
