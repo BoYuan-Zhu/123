@@ -69,28 +69,28 @@ include CMakeFiles/UnitTests_catch2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/UnitTests_catch2.dir/flags.make
 
-CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o: CMakeFiles/UnitTests_catch2.dir/flags.make
-CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o: ../UnitTests_Square_Lattice.cpp
-CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o: CMakeFiles/UnitTests_catch2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o -MF CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o.d -o CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o -c /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp
+CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o: CMakeFiles/UnitTests_catch2.dir/flags.make
+CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o: ../UnitTests_Square_Lattice.cpp
+CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o: CMakeFiles/UnitTests_catch2.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o -MF CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o.d -o CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o -c /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp
 
-CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp > CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.i
+CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp > CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.i
 
-CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp -o CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.s
+CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp -o CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.s
 
 # Object files for target UnitTests_catch2
 UnitTests_catch2_OBJECTS = \
-"CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o"
+"CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o"
 
 # External object files for target UnitTests_catch2
 UnitTests_catch2_EXTERNAL_OBJECTS =
 
-UnitTests_catch2: CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o
+UnitTests_catch2: CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o
 UnitTests_catch2: CMakeFiles/UnitTests_catch2.dir/build.make
 UnitTests_catch2: _deps/catch2-build/src/libCatch2Main.a
 UnitTests_catch2: _deps/catch2-build/src/libCatch2.a

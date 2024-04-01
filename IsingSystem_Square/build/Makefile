@@ -185,20 +185,29 @@ Catch2WithMain/fast:
 	$(MAKE) $(MAKESILENT) -f _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
 .PHONY : Catch2WithMain/fast
 
-# target to build an object file
-UnitTests_Square_Lattice.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnitTests_catch2.dir/build.make CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o
+UnitTests_Square_Lattice.o: UnitTests_Square_Lattice.cpp.o
 .PHONY : UnitTests_Square_Lattice.o
 
-# target to preprocess a source file
-UnitTests_Square_Lattice.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnitTests_catch2.dir/build.make CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.i
+# target to build an object file
+UnitTests_Square_Lattice.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnitTests_catch2.dir/build.make CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o
+.PHONY : UnitTests_Square_Lattice.cpp.o
+
+UnitTests_Square_Lattice.i: UnitTests_Square_Lattice.cpp.i
 .PHONY : UnitTests_Square_Lattice.i
 
-# target to generate assembly for a file
-UnitTests_Square_Lattice.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnitTests_catch2.dir/build.make CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.s
+# target to preprocess a source file
+UnitTests_Square_Lattice.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnitTests_catch2.dir/build.make CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.i
+.PHONY : UnitTests_Square_Lattice.cpp.i
+
+UnitTests_Square_Lattice.s: UnitTests_Square_Lattice.cpp.s
 .PHONY : UnitTests_Square_Lattice.s
+
+# target to generate assembly for a file
+UnitTests_Square_Lattice.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/UnitTests_catch2.dir/build.make CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.s
+.PHONY : UnitTests_Square_Lattice.cpp.s
 
 # Help Target
 help:

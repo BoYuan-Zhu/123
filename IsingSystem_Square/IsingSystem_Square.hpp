@@ -42,7 +42,7 @@ public:
        M_sq.assign(beta.size(),0);
        Z.assign(beta.size(),0);
        C.assign(beta.size(),0);
-       state_energy.resize(maxrep_state+1);
+       
 
        };
        
@@ -186,7 +186,8 @@ public:
     // For state in vector form
     void exactly_evaluate(const std::vector<bool>& state,const long long& rep_state)
     {
-         set_state(state),
+         set_state(state);
+         set_sz_state_energy();
          state_energy[rep_state] = eval_energy();
          exactly_evaluate_given(rep_state);
     };
@@ -248,6 +249,12 @@ public:
         std::cout << value << " ";
     }
     std::cout << "." << std::endl;
+    };
+
+
+    void set_sz_state_energy() 
+    {
+        state_energy.resize(maxrep_state+1);
     };
 };
 

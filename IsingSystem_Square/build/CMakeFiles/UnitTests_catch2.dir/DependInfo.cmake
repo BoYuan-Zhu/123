@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp" "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o" "gcc" "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o.d"
+  "/home/peggy_piggy_zhu/SJTU_CP2024/IsingSystem_Square/UnitTests_Square_Lattice.cpp" "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o" "gcc" "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o.d"
   )
 
 # Targets to which this target links.

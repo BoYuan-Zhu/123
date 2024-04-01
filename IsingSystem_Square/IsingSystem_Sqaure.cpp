@@ -24,7 +24,7 @@ int main()
 
     // const vector<double> beta = {0.1, 1 , 4};
 
-    const vector<int> system_size = { 5,5 };
+    const vector<int> system_size = { 2,2 };
 
     IsingSystem_Square model(system_size,beta);
     

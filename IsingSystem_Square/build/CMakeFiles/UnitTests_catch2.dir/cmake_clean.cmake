@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o"
-  "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.o.d"
+  "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o"
+  "CMakeFiles/UnitTests_catch2.dir/UnitTests_Square_Lattice.cpp.o.d"
   "UnitTests_catch2"
   "UnitTests_catch2.pdb"
 )

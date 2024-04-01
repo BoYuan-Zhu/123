@@ -24,7 +24,7 @@ TEST_CASE("IsingSpinOnLattice","[single spin]")
 TEST_CASE("IsingSystem","[examples of 10 spins]")
 {
     const int n_spin = 10;
-    std::vector<double> beta = {0.1,1.0};
+    vector<double> beta = {0.1,1.0};
     IsingSystem spin(n_spin,beta);
     
     SECTION("basics")
@@ -91,8 +91,9 @@ TEST_CASE("IsingSystem","[examples of 10 spins]")
 
 TEST_CASE("IsingSystem_Square","[examples of 6 x 6 spins]")
 {
-    const std::vector<int> system_size = {6,6};
-    const std::vector<double> beta = {1.0};
+    const vector<int> system_size = {6,6};
+    const vector<double> beta = {0.1,1.0};
+    
     IsingSystem_Square model(system_size,beta);
 
     SECTION("basics")
